@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+a {
+    text-decoration: none !important;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.25s ease-in-out;
+    background-color: #fff;
+}
+
+#sidebar {
+    width: 90px;
+    min-width: 90px;
+    transition: all 0.25s ease-in-out;
+    background-color: #0b0f19;
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+/* PERBAIKAN 1: tambah spasi sebelum .sidebar-logo (descendant selector) */
+/* PERBAIKAN 2: tambah spasi sebelum a.sidebar-link span */
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.toggle-btn {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    border-radius: 0.425rem;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #323c55;
+}
+
+.toggle-btn i {
+    color: #fff;
+}
+
+#sidebar.expand .sidebar-logo,
+#sidebar.expand a.sidebar-link span {
+    animation: fadeIn .25s ease;
+}
+
+/* PERBAIKAN 3: typo 'fadeln' dan 'fadein' diganti 'fadeIn' */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.sidebar-logo a {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.sidebar-nav {
+    padding: 0.7rem 0;
+    flex: 1 1auto;
+    z-index: 10;
+
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #fff;
+    display: block;
+    white-space: nowrap;
+}
+
+.sidebar-link i,
+.dropdown-itemn i {
+  font-size: 1.1rem;
+  margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #3b7ddd;
+}
+
+.sidebar-item {
+    position: relative;
+
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 90px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown + .sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+
+/* navbar */
+
+.navbar {
+    background-color: #fff;
+    box-shadow:0 0 2rem 0 rgba(33,37, 41, .1);
+}
+
+.navbar-expand .navbar-collapse {
+    min-width: 200px;
+}
+
+
+.avatar {
+    height: 40px;
+    width: 40px;
+}
+
+
+.card {
+    background-color: #fff;
+    transition: .4s;
+    cursor: pointer;
+    color: #000;
+    margin-bottom: 1rem;
+    border-color: rgba(231, 234, 234, .07);
+}
+
+
+.card h6 {
+    text-transform: uppercase;
+    font-size: .7161rem;
+    margin-bottom: .25rem;
+}
+
+
+.card:hover {
+    background-color: #293b5f;
+    color:#fff;
+    transition: translate Y(-10.5px);
+}
+
+.table>thead tr {
+    color: #fff;
+    text-align: left;
+
+}
+
+tr.highlight th {
+    background-color: #293b5f;
+    color: #fff;
+}
+
+.content {
+    flex: 11auto;
+}
+
+footer {
+    background-color: #f5f5f5;
+    padding:1rem .875rem;
+}
+
+@media(min-width:768px) {
+    .input-group-navbar .form-control:focus {
+        outline: none;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255);
+        border: none;
+        background-color: #f5f5f5;
+
+    }
+
+    .input-group-navbar {
+        max-width: 320px;
+    }
+
+    .input-group-navbar .form-control {
+        color: #3e4455;
+        background-color: #f5f5f5;
+        height: calc(2.44375rem + 2px);
+    }
+
+
+    .input-group-navbar .btn {
+        color: #000;
+        background-color: #f5f5f5;
+        cursor: pointer;
+        z-index: 1000;
+
+    }
+
+
+    .input-group-navbar .btn:active {
+        background-color: #f5f5f5;
+    }
+
+    .navbar-expand .navbar-nav .dropdown-menu{
+        box-shadow: 0.1rem .2rem rgba(0, 0, 0, 05);
+    }
+}
+
+
+
+textarea.form-control {
+    border: 2px solid #ccc !important;
+    border-radius: 8px;
+}
+
+
+input.form-control {
+    border: 2px solid #ccc !important;
+    border-radius: 8px;
+    height: 50px;        /* lebih tinggi */
+    font-size: 16px;     /* teks di dalam input lebih besar */
+}
+
+input.form-control:focus {
+    border: 2px solid #534AB7 !important;
+    box-shadow: none !important;
+}
+
+
+
